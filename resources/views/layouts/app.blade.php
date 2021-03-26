@@ -25,6 +25,12 @@
                     </a>
                 </div>
                 <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
+                    @if (Auth::check())
+                    <div class="inline mx-10  p-3">
+                    <a class="no-underline hover:underline p-3" href="{{ route('category.index') }}">{{ __('Category') }}</a>
+                    <a class="no-underline hover:underline" href="{{ route('food.index') }}">{{ __('Food') }}</a>
+                </div>
+                    @endif
                     @guest
                         <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('Login') }}</a>
                         @if (Route::has('register'))
