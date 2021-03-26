@@ -151,7 +151,7 @@ class FoodController extends Controller
         // return view('food.list_food', compact('foods'));
 
         $categories = Category::with('food')->get();
-        return view('food.list_food1', compact('categories'));
+        return view('food.list_food', compact('categories'));
 
     }
 

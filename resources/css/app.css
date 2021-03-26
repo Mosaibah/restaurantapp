@@ -3,3 +3,31 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+.background-image-first{
+    background-image: url('https://demo2.tokomoo.com/niku/wp-content/uploads/sites/4/2020/03/Food_069.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background-image-second{
+    background-image: url('https://demo2.tokomoo.com/niku/wp-content/uploads/sites/4/2020/03/Food-edited-2.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.background-image-third{
+    background-image: url('https://demo2.tokomoo.com/niku/wp-content/uploads/sites/4/2020/03/shutterstock_251134723.jpg?id=2338');
+    background-position: center center;
+    background-size: cover;
+}
+
+.test{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
