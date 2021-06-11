@@ -32,6 +32,7 @@
                         type="text" 
                         name="name" 
                         id="name"
+                        value=" {{old('name')}}"
                         class="block border-2 w-full h-14 text-xl outline-none mt-2 rounded-xl
                         @error('name')
                             border-red-500
@@ -53,6 +54,7 @@
                                 type="text"
                                 name="description"
                                 id="description"
+                                value=" {{old('description')}}"
                                 class="block border-2 w-full h-14 text-xl outline-none mt-2 rounded-xl
                                 @error('description')
                                 border-red-500
@@ -104,6 +106,7 @@
                                 type="number"
                                 name="price"
                                 id="price"
+                                value=" {{old('price')}}"
                                 class="block border-2 w-full h-14 text-xl outline-none mt-2 rounded-xl
                                 @error('price')
                                 border-red-500
@@ -120,6 +123,7 @@
                             <input 
                                 type="file"
                                 name="image"
+                                value=" {{old('image')}}"
                                 class="block border-2 w-1/4 h-14 text-xl outline-none mt-2 rounded-xl 
                                 @error('image')
                                 border-red-500

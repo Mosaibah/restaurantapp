@@ -39,7 +39,7 @@ class FoodController extends Controller
     {
         $request->validate([
             'name' => 'required | max:12',
-            'description' => 'required',
+            'description' => 'required | min:60',
             'category' => 'required',
             'price' => 'required',
             'image' => 'required | mimes:jpeg,jpg,png',
@@ -98,7 +98,7 @@ class FoodController extends Controller
     {
         $request->validate([
             'name' => 'required | max:12',
-            'description' => 'required',
+            'description' => 'required | min:60',
             'category' => 'required',
             'price' => 'required',
             'image' => 'mimes:jpeg,jpg,png',
@@ -144,21 +144,5 @@ class FoodController extends Controller
     }
 
 
-    // list food
-    public function list_food(){
-
-        // $foods = Food::latest()->paginate(12);
-        // return view('food.list_food', compact('foods'));
-
-        $categories = Category::with('food')->get();
-        return view('food.list_food', compact('categories'));
-
-    }
-
-    public function view($id){
-
-        $food = Food::find($id);
-
-        return view('food.view', compact('food'));
-    }
+   
 }

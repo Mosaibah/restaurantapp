@@ -20,68 +20,70 @@
                 </div>
             @endif
 
-            <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md capitalize text-4xl">
-                Magage food categories
-            </header>
+          
 
             <div class="w-full p-2">
-
+                
+                <div class="w-full bg-white p-12">
+                    <div class="header flex items-end justify-between mb-12">
+                        <div class="title">
+                            <p class="text-4xl font-bold text-gray-800 mb-4">
+                                Manage Categories
+                            </p>
+                            
+                        </div>
+                        <div class="text-end">
+                            <a class="flex-shrink-0 px-4 py-3 text-base font-semibold text-white bg-purple-500 rounded-lg shadow-md hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-200" href="/category/create">
+                                        Create a new Category
+                            </a>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12">
+                        @foreach ($categories as $category)
                                 
-                <div class="overflow-hidden text-gray-700 body-font">
-                    <div class="container px-5 py-2 mx-auto lg:pt-12 lg:px-32">
-                        <div class="flex flex-wrap -m-1 md:-m-2">
-                            @foreach ($categories as $category)
-                            <div class="flex flex-wrap w-1/3 ">
-                                <div class="w-full p-1 md:p-2 ">
-                                    <div class="bg-gray-300 w-full h-full rounded-lg p-2 flex justify-between">
+                            <div class="overflow-hidden shadow-xl rounded-lg h-90 w-60 md:w-80 cursor-pointer m-auto">
+                            
+                                <div class="bg-white dark:bg-gray-800 w-full p-4 text-center">
                                     
-                                        <div class="flex items-center ">
-                                            <span 
-                                            class="py-2 px-4 text-3xl  ">
+                                    <p class="text-gray-800 dark:text-white text-xl font-medium mb-2">
                                             {{$category->name}}
-                                            </span>
-                                        </div>
+                                    </p>
                                     
+                                    <div class="flex items-center mt-4 justify-between">
+                                        
+                                        <div class="flex flex-col justify-between ml-4 text-sm">                         
+                                            <p class="text-gray-400 dark:text-gray-300">                             
+                                                    {{App\Models\Food::where('category_id', $category->id)->count()}} foods      
+                                            </p>
+                                        </div>
                                         <div class="flex justify-center ">
                                             <a href="/category/{{$category->id}}/edit" class="border-gray-100 border-b-2 pb-1 border-blue-300 m-1 flex items-end">Edit</a>
-                                            <form 
-                                                action="/category/{{$category->id}}"
-                                                method="POST" class="flex items-end">
-                                                
-                                                @csrf
-                                                @method("delete")
+                                                <form 
+                                                    action="/category/{{$category->id}}"
+                                                    method="POST" class="flex items-end">
+                                                    
+                                                    @csrf
+                                                    @method("delete")
 
-                                                <button 
-                                                    class="border-b-2 pb-1 border-red-300 m-1">
-                                                    Delete
-                                                </button>
-                                            </form>
+                                                    <button 
+                                                        class="border-b-2 pb-1 border-red-300 m-1">
+                                                        Delete
+                                                    </button>
+                                                </form>
                                         </div>
-
-                                    
+                                    </div>
                                 </div>
-                                </div>
+                                
                             </div>
-                            @endforeach
-                        </div> 
+                         @endforeach
+
                     </div>
                 </div>
 
-                
-                <div class=" mt-5 w-4/5 m-auto mb-10 mt-15"><a 
-                    href="category/create"
-                    class="bg-blue-500 text-green-100  py-3 px-5 rounded-2xl font-bold">
-                    Create category
-                </a></div>
-
-              
-                
-                
             </div>
         </section>
     </div>
 </main>
-
 
 
 @endsection

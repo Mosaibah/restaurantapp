@@ -54,8 +54,8 @@
                 "
                 class="grid grid-cols-1 m-auto h-56">
             <div class="flex text-gray-100 pt-10">
-                <div class="m-auto pt-4 pb-16 sm:m-auto w-4/5 block text-center">
-                <h1 class="sm:text-gray-300 text-5xl uppercase font-bold text-shadow-md pb-14">
+                <div class="m-auto py-8 sm:m-auto w-4/5 block text-center">
+                <h1 class="sm:text-gray-600 text-5xl uppercase font-bold text-shadow-md pb-14">
                     {{$category->name}}
                 </h1>
                 
@@ -65,19 +65,19 @@
         {{-- end category --}}
         
         {{-- start cards  --}}
-        <div class="container my-12 mx-auto px-4 md:px-12">
+        <div class="container my-12 mx-auto px-4 md:px-12 ">
             <div class="flex flex-wrap -mx-1 lg:-mx-4">
                 @foreach (App\Models\Food::where('category_id', $category->id)->get() as $food) 
                     <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3 ">
                         <div class="overflow-hidden rounded-lg shadow-lg">
 
-                            <a href="#">
+                            <a href="/foods/{{$food->id }}">
                                 <img alt="Placeholder" class="block h-auto w-full" src="images/{{$food->image}}">
                             </a>
 
                             <header class="flex items-center justify-between leading-tight p-2 md:p-4">
                                 <h1 class="text-3xl">
-                                    <a class="no-underline hover:underline text-black" href="#">
+                                    <a class="no-underline hover:underline text-black" href="/foods/{{$food->id }}">
                                         {{$food->name}}
                                     </a>
                                 </h1>
@@ -87,7 +87,7 @@
                             </header>
 
                             <footer class="flex items-center justify-between leading-none p-2 md:p-4">
-                                <a class="flex items-center no-underline hover:underline text-black" href="#">                    
+                                <a class="flex items-center no-underline hover:underline text-black" href="/foods/{{$food->id }}">                    
                                     <p class="ml-2 text-sm">
                                         {{$food->description}}
                                     </p>
@@ -104,9 +104,14 @@
     @endforeach
 
     {{--  --}}
-    <div class="bg-gray-400 h-96 text-center text-6xl font-bold text-gray-200 p-24">
+    {{-- <div class="bg-gray-400 h-96 text-center text-6xl font-bold text-gray-600 p-24">
         footer here
-    </div>
+    </div> --}}
+    <!-- component -->
+<script src="https://kit.fontawesome.com/4db6b32bd3.js" crossorigin="anonymous"></script>
 
-</div>
+
+
+
+
 @endsection
