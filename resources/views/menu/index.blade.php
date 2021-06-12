@@ -53,9 +53,9 @@
                 background-size: cover;
                 "
                 class="grid grid-cols-1 m-auto h-56">
-            <div class="flex text-gray-100 pt-10">
+            <div class="flex  pt-10">
                 <div class="m-auto py-8 sm:m-auto w-4/5 block text-center">
-                <h1 class="sm:text-gray-600 text-5xl uppercase font-bold text-shadow-md pb-14">
+                <h1 class="text-gray-600 text-5xl uppercase font-bold text-shadow-md pb-14">
                     {{$category->name}}
                 </h1>
                 
@@ -87,8 +87,16 @@
                             </header>
 
                             <footer class="flex items-center justify-between leading-none p-2 md:p-4">
-                                <a class="flex items-center no-underline hover:underline text-black" href="/foods/{{$food->id }}">                    
-                                    <p class="ml-2 text-sm">
+                                <a class="flex items-center no-underline  text-black" href="/foods/{{$food->id }}"
+                                    style="
+                                    white-space: inherit;
+                                    width: 293px;
+                                    overflow: hidden;
+                                    text-overflow: revert;
+                                    height: 27px;
+                                    padding: 1px 0px 0px 0px;
+                                    margin: 4px 0px 3px 0px;">                    
+                                    <p class="ml-2 text-sm h-8 ">
                                         {{$food->description}}
                                     </p>
                                 </a>                     

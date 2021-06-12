@@ -36,7 +36,7 @@
             {{$food->description}}
         </section>
         <section class="font-bold text-lg text-blue-900">
-            {{$food->price}}
+            {{$food->price}} SAR
         </section>
         <section class="flex justify-end">
             <button type="button" class="bg-blue-100 text-blue-400 px-3 py-1 rounded-md shadow-xs">

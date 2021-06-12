@@ -38,7 +38,7 @@ class FoodController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required | max:12',
+            'name' => 'required | min:4 | max:30',
             'description' => 'required | min:60',
             'category' => 'required',
             'price' => 'required',
@@ -97,7 +97,7 @@ class FoodController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required | max:12',
+            'name' => 'required |  min:4 | max:30',
             'description' => 'required | min:60',
             'category' => 'required',
             'price' => 'required',
@@ -124,7 +124,7 @@ class FoodController extends Controller
         ]);
 
         return redirect('food')->
-            with('message' , 'New food has been added');
+            with('message' , 'New food has been updated');
     
     }
 
@@ -146,3 +146,5 @@ class FoodController extends Controller
 
    
 }
+
+
