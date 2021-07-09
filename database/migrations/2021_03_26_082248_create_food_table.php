@@ -14,6 +14,7 @@ class CreateFoodTable extends Migration
     public function up()
     {
         Schema::create('food', function (Blueprint $table) {
+\Illuminate\Support\Facades\DB::statement('SET SESSION sql_require_primary_key=0');
             $table->id();
             $table->string('name');
             $table->text('description');
